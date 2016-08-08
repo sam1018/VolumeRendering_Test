@@ -38,6 +38,18 @@
 #include <vtkTimerLog.h>
 #include <vtkVolumeProperty.h>
 #include <vtkDICOMImageReader.h>
+#include <vtkCallbackCommand.h>
+
+void CallbackFunction(vtkObject* caller, long unsigned int vtkNotUsed(eventId), void* vtkNotUsed(clientData), void* vtkNotUsed(callData))
+{
+	vtkRenderer* renderer = static_cast<vtkRenderer*>(caller);
+
+	double timeInSeconds = renderer->GetLastRenderTimeInSeconds();
+	double fps = 1.0 / timeInSeconds;
+	std::cout << "FPS: " << fps << std::endl;
+
+	std::cout << "Callback" << std::endl;
+}
 
 void TestGPURayCastVolumeRotation()
 {
@@ -104,6 +116,11 @@ void TestGPURayCastVolumeRotation()
 	ren->AddActor(outlineActor.GetPointer());
 	renWin->Render();
 	ren->ResetCamera();
+
+	vtkSmartPointer<vtkCallbackCommand> callback = vtkSmartPointer<vtkCallbackCommand>::New();
+	callback->SetCallback(CallbackFunction);
+	ren->AddObserver(vtkCommand::EndEvent, callback);
+
 
 	iren->Initialize();
 	iren->SetDesiredUpdateRate(30.0);
