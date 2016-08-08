@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 2.6)
+project(VolumeRendering_Test)
+set(VTK_DIR "D:/iQ3/slicer/SB_DEV/VTKv7-build")
+find_package(VTK REQUIRED)
+include(${VTK_USE_FILE})
+add_executable(VolumeRendering_Test TestGPURayCastVolumeRotation.cxx)
+target_link_libraries(VolumeRendering_Test ${VTK_LIBRARIES})
