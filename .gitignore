@@ -45,3 +45,15 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+/CMakeFiles
+/ALL_BUILD.vcxproj
+/ALL_BUILD.vcxproj.filters
+/CMakeCache.txt
+/cmake_install.cmake
+/VolumeRendering_Test.sln
+/VolumeRendering_Test.VC.db
+/VolumeRendering_Test.VC.VC.opendb
+/VolumeRendering_Test.vcxproj
+/VolumeRendering_Test.vcxproj.filters
+/ZERO_CHECK.vcxproj
+/ZERO_CHECK.vcxproj.filters
