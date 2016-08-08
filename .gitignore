@@ -57,3 +57,6 @@ Temporary Items
 /VolumeRendering_Test.vcxproj.filters
 /ZERO_CHECK.vcxproj
 /ZERO_CHECK.vcxproj.filters
+/Debug
+/VolumeRendering_Test.dir/Debug
+/x64/Debug/ZERO_CHECK
